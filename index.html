@@ -1,0 +1,1653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CampusConnect AI – Your Smart College Assistant</title>
+  <meta name="description" content="CampusConnect AI is an intelligent college enquiry assistant helping students explore courses, fees, admissions, scholarships, and placements 24/7.">
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="light">
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container announcement-content">
+      <span class="badge-pill pulse"><i class="fa-solid fa-sparkles"></i> Admissions 2026-27 Open</span>
+      <p class="announcement-text">
+        Explore 24+ courses, merit scholarships up to 100%, and instant AI counselling!
+        <span class="demo-tag"><i class="fa-solid fa-flask"></i> University Demo Project</span>
+      </p>
+      <div class="announcement-actions">
+        <a href="#chat-section" class="announcement-link"><i class="fa-solid fa-robot"></i> Chat Now</a>
+        <button id="close-announcement" aria-label="Close Announcement"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="site-header" id="header">
+    <div class="container header-container">
+      <a href="#home" class="logo">
+        <div class="logo-icon-wrapper">
+          <i class="fa-solid fa-graduation-cap"></i>
+          <span class="logo-sparkle"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+        </div>
+        <div class="logo-text">
+          <span class="brand-title">CampusConnect<span class="gradient-text">.AI</span></span>
+          <span class="brand-sub">Smart College Assistant</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" id="nav-menu">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#home" class="nav-link active"><i class="fa-solid fa-house"></i> Home</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link"><i class="fa-solid fa-university"></i> About</a></li>
+          <li class="nav-item"><a href="#courses" class="nav-link"><i class="fa-solid fa-book-open"></i> Courses</a></li>
+          <li class="nav-item"><a href="#admissions" class="nav-link"><i class="fa-solid fa-clipboard-check"></i> Admissions</a></li>
+          <li class="nav-item"><a href="#dashboard" class="nav-link"><i class="fa-solid fa-chart-pie"></i> Dashboard</a></li>
+          <li class="nav-item"><a href="#chat-section" class="nav-link nav-highlight"><i class="fa-solid fa-robot"></i> AI Chatbot</a></li>
+          <li class="nav-item"><a href="#faqs" class="nav-link"><i class="fa-solid fa-circle-question"></i> FAQs</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Controls -->
+      <div class="header-controls">
+        <button class="icon-btn" id="search-trigger" title="Search College Information (Ctrl+K)">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <button class="icon-btn" id="theme-toggle" title="Toggle Dark/Light Mode">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <a href="#chat-section" class="btn btn-gradient header-cta">
+          <i class="fa-solid fa-comment-dots"></i>
+          <span>Ask Assistant</span>
+        </a>
+        <button class="hamburger-menu" id="hamburger-btn" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. HERO SECTION -->
+    <section class="hero-section" id="home">
+      <div class="hero-bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+      </div>
+
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="status-dot"></span>
+            <span>Next-Gen Smart Campus Portal</span>
+            <span class="badge-highlight">AI Powered</span>
+          </div>
+
+          <h1 class="hero-title">
+            Your College Questions, <br>
+            <span class="gradient-text typed-gradient">Answered Instantly!</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Meet <strong>CampusConnect AI</strong> – your 24/7 intelligent guide for university admissions, courses, transparent fee structures, merit scholarships, hostel life, and placement insights.
+          </p>
+
+          <!-- Hero Search Bar -->
+          <div class="hero-search-wrapper">
+            <i class="fa-solid fa-sparkles hero-search-icon"></i>
+            <input type="text" id="hero-search-input" placeholder="Ask anything... e.g. 'What is the B.Tech fee?' or 'Hostel facilities'" autocomplete="off">
+            <button class="btn btn-gradient hero-search-btn" id="hero-search-submit">
+              <span>Ask AI</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+
+          <!-- Hero Action Buttons -->
+          <div class="hero-actions">
+            <a href="#chat-section" class="btn btn-gradient btn-lg">
+              <i class="fa-solid fa-robot"></i>
+              <span>Start Chatting</span>
+            </a>
+            <a href="#courses" class="btn btn-outline btn-lg">
+              <i class="fa-solid fa-compass"></i>
+              <span>Explore Courses</span>
+            </a>
+            <a href="#enquiry" class="btn btn-glass btn-lg">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span>Quick Enquiry</span>
+            </a>
+          </div>
+
+          <!-- Hero Trust Metrics -->
+          <div class="hero-trust-bar">
+            <div class="trust-item">
+              <i class="fa-solid fa-award text-purple"></i>
+              <div>
+                <strong>NAAC A++</strong>
+                <span>Demo Accreditation</span>
+              </div>
+            </div>
+            <div class="trust-item">
+              <i class="fa-solid fa-briefcase text-pink"></i>
+              <div>
+                <strong>₹45.5 LPA</strong>
+                <span>Highest Package</span>
+              </div>
+            </div>
+            <div class="trust-item">
+              <i class="fa-solid fa-bolt text-orange"></i>
+              <div>
+                <strong>&lt; 0.5s</strong>
+                <span>AI Response Time</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Chatbot Visual Card -->
+        <div class="hero-visual">
+          <div class="hero-card-glow"></div>
+          <div class="hero-bot-card glass-panel">
+            <div class="bot-card-header">
+              <div class="bot-avatar-ring">
+                <div class="bot-avatar-inner">
+                  <i class="fa-solid fa-robot"></i>
+                </div>
+                <span class="online-indicator"></span>
+              </div>
+              <div class="bot-meta">
+                <h3>CampusConnect Assistant</h3>
+                <span class="status-text"><i class="fa-solid fa-circle-check"></i> Always Online &bull; Ready</span>
+              </div>
+              <div class="bot-header-badge">
+                <i class="fa-solid fa-brain"></i> NLP Engine
+              </div>
+            </div>
+
+            <!-- Simulated mini chat preview -->
+            <div class="hero-chat-preview">
+              <div class="preview-bubble bot-bubble">
+                <i class="fa-solid fa-robot bubble-avatar"></i>
+                <div class="bubble-content">
+                  <p>👋 Hello! I am your AI College Assistant. Ask me about courses, fees, cutoff marks, or hostel amenities!</p>
+                </div>
+              </div>
+              <div class="preview-bubble user-bubble">
+                <div class="bubble-content">
+                  <p>What is the eligibility and fee for B.Tech CSE?</p>
+                </div>
+                <i class="fa-solid fa-user bubble-avatar"></i>
+              </div>
+              <div class="preview-bubble bot-bubble">
+                <i class="fa-solid fa-robot bubble-avatar"></i>
+                <div class="bubble-content">
+                  <p>🎓 <strong>B.Tech CSE</strong> requires <strong>60%+ in 10+2</strong> (PCM). Annual fee is <strong>₹1,50,000/year</strong> with merit scholarships up to 100%!</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick sample interactive prompt pills -->
+            <div class="hero-prompt-pills">
+              <span>Try asking:</span>
+              <button class="pill-btn hero-pill" data-query="What courses are available?">📚 All Courses</button>
+              <button class="pill-btn hero-pill" data-query="What is the admission process?">📝 Admission Steps</button>
+              <button class="pill-btn hero-pill" data-query="Are scholarships available?">💰 Scholarships</button>
+              <button class="pill-btn hero-pill" data-query="What is the placement record?">🚀 Placements</button>
+            </div>
+
+            <!-- Card Bottom Action -->
+            <div class="hero-card-footer">
+              <a href="#chat-section" class="btn btn-sm btn-gradient w-100">
+                <i class="fa-solid fa-comments"></i> Open Full Interactive Chatbot
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. LIVE DASHBOARD & STATS SECTION -->
+    <section class="section dashboard-section" id="dashboard">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-chart-line"></i> Real-Time College Analytics</span>
+          <h2 class="section-title">Institutional <span class="gradient-text">Overview & Metrics</span></h2>
+          <p class="section-subtitle">Key performance indicators, academic statistics, and live enquiry tracking at a glance.</p>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card glass-panel stat-purple">
+            <div class="stat-icon-wrapper">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div class="stat-content">
+              <div class="stat-number-wrapper">
+                <span class="stat-number counter" data-target="24">0</span>
+                <span class="stat-suffix">+</span>
+              </div>
+              <h3 class="stat-title">Total Courses</h3>
+              <p class="stat-desc">UG, PG & Doctoral Programs</p>
+            </div>
+            <div class="stat-badge"><i class="fa-solid fa-check"></i> Verified</div>
+          </div>
+
+          <div class="stat-card glass-panel stat-pink">
+            <div class="stat-icon-wrapper">
+              <i class="fa-solid fa-users"></i>
+            </div>
+            <div class="stat-content">
+              <div class="stat-number-wrapper">
+                <span class="stat-number counter" id="stat-enquiries-counter" data-target="184">0</span>
+                <span class="stat-suffix">+</span>
+              </div>
+              <h3 class="stat-title">Student Enquiries</h3>
+              <p class="stat-desc">Processed via Portal & AI</p>
+            </div>
+            <div class="stat-badge"><i class="fa-solid fa-arrow-trend-up"></i> Active</div>
+          </div>
+
+          <div class="stat-card glass-panel stat-orange">
+            <div class="stat-icon-wrapper">
+              <i class="fa-solid fa-hand-holding-dollar"></i>
+            </div>
+            <div class="stat-content">
+              <div class="stat-number-wrapper">
+                <span class="stat-currency">₹</span>
+                <span class="stat-number counter" data-target="2.5">0</span>
+                <span class="stat-suffix">Cr+</span>
+              </div>
+              <h3 class="stat-title">Scholarships Pool</h3>
+              <p class="stat-desc">15+ Merit & Need Schemes</p>
+            </div>
+            <div class="stat-badge"><i class="fa-solid fa-gift"></i> 100% Aid</div>
+          </div>
+
+          <div class="stat-card glass-panel stat-blue">
+            <div class="stat-icon-wrapper">
+              <i class="fa-solid fa-robot"></i>
+            </div>
+            <div class="stat-content">
+              <div class="stat-number-wrapper">
+                <span class="stat-number counter" id="stat-chat-counter" data-target="1420">0</span>
+                <span class="stat-suffix">+</span>
+              </div>
+              <h3 class="stat-title">AI Questions Answered</h3>
+              <p class="stat-desc">Live Intelligent Sessions</p>
+            </div>
+            <div class="stat-badge pulse-badge"><i class="fa-solid fa-bolt"></i> Live</div>
+          </div>
+        </div>
+
+        <!-- Dashboard Visual Mini-Chart & Highlights -->
+        <div class="dashboard-highlights glass-panel">
+          <div class="chart-box">
+            <div class="chart-header">
+              <div>
+                <h4><i class="fa-solid fa-chart-column text-purple"></i> Annual Placement Trends</h4>
+                <p>Consistent 90%+ placement percentage across top tech and business firms</p>
+              </div>
+              <span class="tag-pill">2022 - 2026</span>
+            </div>
+            <div class="custom-bar-chart">
+              <div class="bar-col">
+                <div class="bar-fill" style="--height: 86%;">
+                  <span class="bar-val">86%</span>
+                </div>
+                <span class="bar-label">2023</span>
+              </div>
+              <div class="bar-col">
+                <div class="bar-fill" style="--height: 91%;">
+                  <span class="bar-val">91%</span>
+                </div>
+                <span class="bar-label">2024</span>
+              </div>
+              <div class="bar-col">
+                <div class="bar-fill" style="--height: 94%;">
+                  <span class="bar-val">94%</span>
+                </div>
+                <span class="bar-label">2025</span>
+              </div>
+              <div class="bar-col active-bar">
+                <div class="bar-fill" style="--height: 97%;">
+                  <span class="bar-val">97%</span>
+                </div>
+                <span class="bar-label">2026 (Exp.)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="highlights-box">
+            <h4><i class="fa-solid fa-bullseye text-pink"></i> Campus Highlights</h4>
+            <ul class="highlight-list">
+              <li>
+                <i class="fa-solid fa-circle-check text-green"></i>
+                <div>
+                  <strong>500+ Top Recruiters:</strong>
+                  <span>Google, Amazon, Microsoft, TCS, Infosys, Deloitte</span>
+                </div>
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check text-green"></i>
+                <div>
+                  <strong>120-Acre Eco-Smart Campus:</strong>
+                  <span>State-of-the-art AI laboratories, smart auditoriums, and olympic sports arena</span>
+                </div>
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check text-green"></i>
+                <div>
+                  <strong>15:1 Student-Faculty Ratio:</strong>
+                  <span>Distinguished mentors with PhDs and industry patents</span>
+                </div>
+              </li>
+            </ul>
+            <div class="highlights-cta">
+              <button class="btn btn-sm btn-gradient" id="view-enquiries-btn">
+                <i class="fa-solid fa-table-list"></i> View Saved Demo Enquiries (<span id="saved-enquiries-badge">0</span>)
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. COLLEGE INFORMATION SECTION -->
+    <section class="section info-section" id="about">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-school"></i> Campus Hub</span>
+          <h2 class="section-title">Explore <span class="gradient-text">College Information</span></h2>
+          <p class="section-subtitle">
+            Everything prospective students and parents need to know about our academics, residential amenities, and career support.
+          </p>
+          <div class="demo-disclaimer-pill">
+            <i class="fa-solid fa-circle-info"></i> All institutional figures are realistic sample demo data for student evaluation.
+          </div>
+        </div>
+
+        <div class="info-cards-grid">
+          <!-- Card 1: About College -->
+          <div class="info-card glass-panel" data-topic="about">
+            <div class="info-card-header bg-grad-purple">
+              <i class="fa-solid fa-building-columns"></i>
+              <h3>About the College</h3>
+            </div>
+            <div class="info-card-body">
+              <p>Founded with a vision of global innovation, CampusConnect University integrates experiential learning, world-class faculty, and industry-aligned research across STEM and management.</p>
+              <ul class="info-bullets">
+                <li><i class="fa-solid fa-check"></i> NAAC A++ Accredited with 3.82 CGPA</li>
+                <li><i class="fa-solid fa-check"></i> 120-acre lush green Wi-Fi enabled campus</li>
+                <li><i class="fa-solid fa-check"></i> 250+ patents published by faculty & students</li>
+              </ul>
+            </div>
+            <div class="info-card-footer">
+              <button class="card-btn-ask" data-query="Tell me about the college history and accreditation"><i class="fa-solid fa-robot"></i> Ask AI</button>
+              <button class="card-btn-more" data-modal="about-modal">Details <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </div>
+
+          <!-- Card 2: Courses Offered -->
+          <div class="info-card glass-panel" data-topic="courses">
+            <div class="info-card-header bg-grad-blue">
+              <i class="fa-solid fa-book-bookmark"></i>
+              <h3>Courses Offered</h3>
+            </div>
+            <div class="info-card-body">
+              <p>We offer undergraduate and postgraduate degrees in Engineering, Computer Applications, Management, and Commerce with modern specializations like AI, Cloud, and FinTech.</p>
+              <ul class="info-bullets">
+                <li><i class="fa-solid fa-check"></i> B.Tech, BCA, BBA, MBA, MCA, B.Com</li>
+                <li><i class="fa-solid fa-check"></i> Dual degree & international exchange options</li>
+                <li><i class="fa-solid fa-check"></i> Industry-certified curriculum with certifications</li>
+              </ul>
+            </div>
+            <div class="info-card-footer">
+              <button class="card-btn-ask" data-query="What courses are available and what are their details?"><i class="fa-solid fa-robot"></i> Ask AI</button>
+              <a href="#courses" class="card-btn-more">View Courses <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- Card 3: Admission Process -->
+          <div class="info-card glass-panel" data-topic="admission">
+            <div class="info-card-header bg-grad-pink">
+              <i class="fa-solid fa-clipboard-user"></i>
+              <h3>Admission Process</h3>
+            </div>
+            <div class="info-card-body">
+              <p>A transparent, student-friendly 5-step admission cycle managed online. Merit-based entry through national entrance exams or our University Scholastic Assessment (CC-SAT).</p>
+              <ul class="info-bullets">
+                <li><i class="fa-solid fa-check"></i> 100% online portal application</li>
+                <li><i class="fa-solid fa-check"></i> Fast-track provisional offer letters in 48 hours</li>
+                <li><i class="fa-solid fa-check"></i> Dedicated academic counsellors for assistance</li>
+              </ul>
+            </div>
+            <div class="info-card-footer">
+              <button class="card-btn-ask" data-query="What is the step by step admission process?"><i class="fa-solid fa-robot"></i> Ask AI</button>
+              <a href="#admissions" class="card-btn-more">Steps <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- Card 4: Fee Structure -->
+          <div class="info-card glass-panel" data-topic="fees">
+            <div class="info-card-header bg-grad-orange">
+              <i class="fa-solid fa-receipt"></i>
+              <h3>Fee Structure</h3>
+            </div>
+            <div class="info-card-body">
+              <p>Transparent fee schedules without hidden charges. Flexible zero-interest installment options and tie-ups with leading banks for pre-approved education loans.</p>
+              <ul class="info-bullets">
+                <li><i class="fa-solid fa-check"></i> UG Programs from ₹75,000 to ₹1,50,000 / year</li>
+                <li><i class="fa-solid fa-check"></i> PG Programs from ₹1,20,000 to ₹2,10,000 / year</li>
+                <li><i class="fa-solid fa-check"></i> Semester-wise easy installment options</li>
+              </ul>
+            </div>
+            <div class="info-card-footer">
+              <button class="card-btn-ask" data-query="What are the college fees for all courses?"><i class="fa-solid fa-robot"></i> Ask AI</button>
+              <button class="card-btn-more" data-modal="fees-modal">Fee Chart <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </div>
+
+          <!-- Card 5: Scholarships -->
+          <div class="info-card glass-panel" data-topic="scholarships">
+            <div class="info-card-header bg-grad-emerald">
+              <i class="fa-solid fa-award"></i>
+              <h3>Scholarships</h3>
+            </div>
+            <div class="info-card-body">
+              <p>Over ₹2.5 Crores in scholarships awarded annually. We believe financial constraints should never come between a brilliant mind and quality education.</p>
+              <ul class="info-bullets">
+                <li><i class="fa-solid fa-check"></i> Merit Scholarship: Up to 100% tuition waiver</li>
+                <li><i class="fa-solid fa-check"></i> Sports Excellence & Cultural grants</li>
+                <li><i class="fa-solid fa-check"></i> Special 25% waiver for girl students & defense wards</li>
+              </ul>
+            </div>
+            <div class="info-card-footer">
+              <button class="card-btn-ask" data-query="Are scholarships available and what is the eligibility?"><i class="fa-solid fa-robot"></i> Ask AI</button>
+              <button class="card-btn-more" data-modal="scholarships-modal">Schemes <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </div>
+
+          <!-- Card 6: Placement Information -->
+          <div class="info-card glass-panel" data-topic="placements">
+            <div class="info-card-header bg-grad-violet">
+              <i class="fa-solid fa-briefcase"></i>
+              <h3>Placements</h3>
+            </div>
+            <div class="info-card-body">
+              <p>Our proactive Corporate Relations & Placement Cell ensures students are industry-ready through aptitude bootcamps, hackathons, and corporate mentorship.</p>
+              <ul class="info-bullets">
+                <li><i class="fa-solid fa-check"></i> 94.8% placement rate for batch of 2025</li>
+                <li><i class="fa-solid fa-check"></i> Highest Package: ₹45.5 LPA (International)</li>
+                <li><i class="fa-solid fa-check"></i> Average Package: ₹8.4 LPA across technical streams</li>
+              </ul>
+            </div>
+            <div class="info-card-footer">
+              <button class="card-btn-ask" data-query="What is the placement record and who are the top recruiters?"><i class="fa-solid fa-robot"></i> Ask AI</button>
+              <button class="card-btn-more" data-modal="placements-modal">Recruiters <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </div>
+
+          <!-- Card 7: Hostel Facilities -->
+          <div class="info-card glass-panel" data-topic="hostel">
+            <div class="info-card-header bg-grad-cyan">
+              <i class="fa-solid fa-hotel"></i>
+              <h3>Hostel Facilities</h3>
+            </div>
+            <div class="info-card-body">
+              <p>Safe, comfortable home away from home with separate hostel blocks for boys and girls. Equipped with 24/7 security, high-speed Wi-Fi, and recreational lounges.</p>
+              <ul class="info-bullets">
+                <li><i class="fa-solid fa-check"></i> AC & Non-AC rooms (Single, Twin & Triple sharing)</li>
+                <li><i class="fa-solid fa-check"></i> Multi-cuisine hygienic mess (4 meals daily)</li>
+                <li><i class="fa-solid fa-check"></i> 24/7 biometric security and medical clinic on-campus</li>
+              </ul>
+            </div>
+            <div class="info-card-footer">
+              <button class="card-btn-ask" data-query="Is hostel accommodation available and what are the fees?"><i class="fa-solid fa-robot"></i> Ask AI</button>
+              <button class="card-btn-more" data-modal="hostel-modal">Hostel Info <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </div>
+
+          <!-- Card 8: Campus Life -->
+          <div class="info-card glass-panel" data-topic="campus">
+            <div class="info-card-header bg-grad-amber">
+              <i class="fa-solid fa-masks-theater"></i>
+              <h3>Campus Life</h3>
+            </div>
+            <div class="info-card-body">
+              <p>Dynamic student clubs, annual cultural extravaganzas, hackathons, and sports leagues make college life vibrant, collaborative, and unforgettable.</p>
+              <ul class="info-bullets">
+                <li><i class="fa-solid fa-check"></i> 30+ active student clubs (Robotics, Arts, Debate)</li>
+                <li><i class="fa-solid fa-check"></i> Annual Techno-Cultural Fest 'TechNova'</li>
+                <li><i class="fa-solid fa-check"></i> Olympic-size pool, indoor sports arena, and gymnasium</li>
+              </ul>
+            </div>
+            <div class="info-card-footer">
+              <button class="card-btn-ask" data-query="What is campus life and student club activities like?"><i class="fa-solid fa-robot"></i> Ask AI</button>
+              <button class="card-btn-more" data-modal="campus-modal">Activities <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. AI CHATBOT SECTION (CORE FEATURE) -->
+    <section class="section chatbot-section" id="chat-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag pulse"><i class="fa-solid fa-brain"></i> Core Feature</span>
+          <h2 class="section-title">CampusConnect <span class="gradient-text">AI Interactive Assistant</span></h2>
+          <p class="section-subtitle">
+            Get instant, human-like answers regarding courses, eligibility, cutoffs, tuition fees, hostels, and scholarships.
+          </p>
+        </div>
+
+        <!-- Chat Container Window -->
+        <div class="chat-wrapper glass-panel">
+          <!-- Chat Top Header -->
+          <div class="chat-header">
+            <div class="chat-bot-identity">
+              <div class="chat-avatar-wrapper">
+                <div class="chat-avatar-circle">
+                  <i class="fa-solid fa-robot"></i>
+                </div>
+                <span class="status-pulse"></span>
+              </div>
+              <div class="chat-bot-details">
+                <div class="chat-bot-name">
+                  <h4>CampusConnect AI</h4>
+                  <span class="bot-badge-smart"><i class="fa-solid fa-wand-magic-sparkles"></i> College Expert</span>
+                </div>
+                <div class="chat-status-line">
+                  <span class="online-tag">● Online</span>
+                  <span class="response-speed">Instant responses &bull; 40+ topic knowledge base</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Chat Actions -->
+            <div class="chat-header-actions">
+              <button class="chat-action-btn" id="chat-voice-toggle" title="Toggle Voice Speech Output (Text-to-Speech)">
+                <i class="fa-solid fa-volume-high"></i>
+              </button>
+              <button class="chat-action-btn" id="chat-export-btn" title="Download Chat History">
+                <i class="fa-solid fa-download"></i>
+              </button>
+              <button class="chat-action-btn" id="chat-clear-btn" title="Clear Conversation">
+                <i class="fa-solid fa-trash-can"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Suggested Questions Bar -->
+          <div class="suggested-questions-container">
+            <div class="suggested-label">
+              <i class="fa-solid fa-lightbulb"></i> Suggested Questions:
+            </div>
+            <div class="suggested-pills" id="suggested-pills">
+              <button class="suggested-pill" data-query="What courses are available?">
+                <i class="fa-solid fa-graduation-cap"></i> What courses are available?
+              </button>
+              <button class="suggested-pill" data-query="What is the admission process?">
+                <i class="fa-solid fa-clipboard-check"></i> What is the admission process?
+              </button>
+              <button class="suggested-pill" data-query="What are the college fees?">
+                <i class="fa-solid fa-receipt"></i> What are the college fees?
+              </button>
+              <button class="suggested-pill" data-query="Are scholarships available?">
+                <i class="fa-solid fa-award"></i> Are scholarships available?
+              </button>
+              <button class="suggested-pill" data-query="What is the placement record?">
+                <i class="fa-solid fa-briefcase"></i> What is the placement record?
+              </button>
+              <button class="suggested-pill" data-query="Is hostel accommodation available?">
+                <i class="fa-solid fa-hotel"></i> Is hostel accommodation available?
+              </button>
+              <button class="suggested-pill" data-query="What documents are required for admission?">
+                <i class="fa-solid fa-file-invoice"></i> What documents are required for admission?
+              </button>
+              <button class="suggested-pill" data-query="What is the highest package?">
+                <i class="fa-solid fa-trophy"></i> What is the highest package?
+              </button>
+              <button class="suggested-pill" data-query="How to contact the college?">
+                <i class="fa-solid fa-phone"></i> How to contact the college?
+              </button>
+            </div>
+          </div>
+
+          <!-- Chat Messages Body -->
+          <div class="chat-messages-container" id="chat-messages" tabindex="0" aria-live="polite">
+            <!-- Initial Welcome Message from Bot -->
+            <div class="message bot-message">
+              <div class="message-avatar">
+                <i class="fa-solid fa-robot"></i>
+              </div>
+              <div class="message-bubble">
+                <div class="message-header-line">
+                  <span class="message-sender">CampusConnect AI</span>
+                  <span class="message-time">Just now</span>
+                </div>
+                <div class="message-text">
+                  <p>👋 <strong>Welcome to CampusConnect University!</strong></p>
+                  <p>I am your smart AI college counsellor. I can help you with:</p>
+                  <ul>
+                    <li>🎓 <strong>Course details</strong> (B.Tech, BBA, BCA, MBA, MCA, B.Com)</li>
+                    <li>💰 <strong>Fee structures</strong> & payment installments</li>
+                    <li>📝 <strong>Admission procedure</strong> & document checklist</li>
+                    <li>🏆 <strong>Scholarships</strong> up to 100% tuition waiver</li>
+                    <li>🚀 <strong>Campus placements</strong> & top recruiting partners</li>
+                    <li>🏡 <strong>Hostel rooms</strong>, food & campus facilities</li>
+                  </ul>
+                  <p>How may I assist your educational journey today? Feel free to click any suggestion above or type your question below!</p>
+                </div>
+                <div class="message-quick-replies">
+                  <button class="quick-reply-btn" data-query="What courses are available?">Explore Courses</button>
+                  <button class="quick-reply-btn" data-query="What are the college fees?">Fee Details</button>
+                  <button class="quick-reply-btn" data-query="Are scholarships available?">Scholarships</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Typing Indicator Animation (Hidden by default) -->
+          <div class="typing-indicator-wrapper" id="typing-indicator" style="display: none;">
+            <div class="typing-avatar">
+              <i class="fa-solid fa-robot"></i>
+            </div>
+            <div class="typing-bubble">
+              <span class="typing-dot"></span>
+              <span class="typing-dot"></span>
+              <span class="typing-dot"></span>
+              <span class="typing-text">CampusConnect AI is thinking...</span>
+            </div>
+          </div>
+
+          <!-- Chat Input Area -->
+          <div class="chat-input-area">
+            <form id="chat-form" class="chat-form">
+              <button type="button" class="chat-input-btn" id="voice-input-btn" title="Voice Input (Speech to Text)">
+                <i class="fa-solid fa-microphone"></i>
+              </button>
+              
+              <div class="input-field-wrapper">
+                <input 
+                  type="text" 
+                  id="chat-user-input" 
+                  placeholder="Ask a question (e.g., 'What is B.Tech eligibility?', 'Hostel fee?')..." 
+                  autocomplete="off" 
+                  maxlength="500"
+                  required
+                >
+              </div>
+
+              <button type="submit" class="btn btn-gradient chat-send-btn" id="chat-send-btn" title="Send Question">
+                <span>Send</span>
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </form>
+            <div class="chat-footer-caption">
+              <span><i class="fa-solid fa-shield-halved"></i> Powered by CampusConnect Smart NLP Knowledge Base &bull; Instant offline responses</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. COURSES SECTION -->
+    <section class="section courses-section" id="courses">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-graduation-cap"></i> Academic Offerings</span>
+          <h2 class="section-title">Flagship <span class="gradient-text">Courses & Programs</span></h2>
+          <p class="section-subtitle">
+            Industry-aligned degrees designed to prepare students for high-impact careers in technology, management, and commerce.
+          </p>
+        </div>
+
+        <!-- Course Category Filters -->
+        <div class="course-filter-bar">
+          <button class="filter-btn active" data-filter="all">All Programs (6)</button>
+          <button class="filter-btn" data-filter="tech">Engineering & Tech</button>
+          <button class="filter-btn" data-filter="mgmt">Management & Commerce</button>
+          <button class="filter-btn" data-filter="comp">Computer Applications</button>
+        </div>
+
+        <!-- 6 Course Cards Grid -->
+        <div class="courses-grid" id="courses-grid">
+          
+          <!-- Course 1: B.Tech -->
+          <div class="course-card glass-panel" data-category="tech">
+            <div class="course-card-top bg-grad-purple">
+              <div class="course-badge">UG &bull; Engineering</div>
+              <div class="course-icon"><i class="fa-solid fa-microchip"></i></div>
+              <h3 class="course-name">B.Tech</h3>
+              <p class="course-spec">Computer Science & Engineering (AI / Data Science)</p>
+            </div>
+            <div class="course-card-body">
+              <p class="course-desc">A rigorous four-year program integrating core computing, artificial intelligence, cloud architectures, and machine learning hands-on projects.</p>
+              
+              <div class="course-info-list">
+                <div class="info-row">
+                  <span class="info-label"><i class="fa-regular fa-clock"></i> Duration:</span>
+                  <span class="info-val">4 Years (8 Semesters)</span>
+                </div>
+                <div class="info-row">
+                  <span class="info-label"><i class="fa-solid fa-user-check"></i> Eligibility:</span>
+                  <span class="info-val">10+2 with PCM (Min 60%)</span>
+                </div>
+                <div class="info-row">
+                  <span class="info-label"><i class="fa-solid fa-indian-rupee-sign"></i> Annual Fee:</span>
+                  <span class="info-val price-highlight">₹1,50,000 / year</span>
+                </div>
+                <div class="info-row">
+                  <span class="info-label"><i class="fa-solid fa-briefcase"></i> Top Recruiters:</span>
+                  <span class="info-val">Google, Amazon, Microsoft</span>
+                </div>
+              </div>
+
+              <div class="course-card-actions">
+                <button class="btn btn-outline btn-sm learn-more-btn" data-course="btech">
+                  <i class="fa-solid fa-circle-info"></i> Learn More
+                </button>
+                <button class="btn btn-gradient btn-sm course-ask-btn" data-query="Tell me about B.Tech CSE eligibility, fee and syllabus">
+                  <i class="fa-solid fa-robot"></i> Ask AI
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Course 2: BBA -->
+          <div class="course-card glass-panel" data-category="mgmt">
+            <div class="course-card-top bg-grad-pink">
+              <div class="course-badge">UG &bull; Management</div>
+              <div class="course-icon"><i class="fa-solid fa-briefcase"></i></div>
+              <h3 class="course-name">BBA</h3>
+              <p class="course-spec">Bachelor of Business Administration (Digital / FinTech)</p>
+            </div>
+            <div class="course-card-body">
+              <p class="course-desc">Develop managerial leadership, entrepreneurial acumen, corporate strategy, digital marketing, and financial analysis skills with case studies.</p>
+              
+              <div class="course-info-list">
+                <div class="info-row">
+                  <span class="info-label"><i class="fa-regular fa-clock"></i> Duration:</span>
+                  <span class="info-val">3 Years (6 Semesters)</span>
+                </div>
+                <div class="info-row">
+                  <span class="info-label"><i class="fa-solid fa-user-check"></i> Eligibility:</span>
+                  <span class="info-val">10+2 Any Stream (Min 50%)</span>
+                </div>
+                <div class="info-row">
+                  <span class="info-label"><i class="fa-solid fa-indian-rupee-sign"></i> Annual Fee:</span>
+                  <span class="info-val price-highlight">₹95,000 / year</span>
+                </div>
+                <div class="info-row">
+                  <span class="info-label"><i class="fa-solid fa-briefcase"></i> Top Recruiters:</span>
+                  <span class="info-val">Deloitte, KPMG, EY, HDFC</span>
+                </div>
+              </div>
+
+              <div class="course-card-actions">
+                <button class="btn btn-outline btn-sm learn-more-btn" data-course="bba">
+                  <i class="fa-solid fa-circle-info"></i> Learn More
+                </button>
+                <button class="btn btn-gradient btn-sm course-ask-btn" data-query="Tell me about BBA eligibility, fees and career scope">
+                  <i class="fa-solid fa-robot"></i> Ask AI
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Course 3: BCA -->
+          <div class="course-card glass-panel" data-category="comp">
+            <div class="course-card-top bg-grad-blue">
+              <div class="course-badge">UG &bull; Applications</div>
+              <div class="course-icon"><i class="fa-solid fa-laptop-code"></i></div>
+              <h3 class="course-name">BCA</h3>
+              <p class="course-spec">Bachelor of Computer Applications (Full-Stack / Cloud)</p>
+            </div>
+            <div class="course-card-body">
+              <p class="course-desc">Master web development, databases, mobile apps, and cloud infrastructure. Hands-on coding labs from semester one with modern tech stacks.</p>
+              
+              <div class="course-info-list">
+                <div class="info-row">
+                  <span class="info-label"><i class="fa-regular fa-clock"></i> Duration:</span>
+                  <span class="info-val">3 Years (6 Semesters)</span>
+                </div>
+                <div class="info-row">
+                  <span class="info-label"><i class="fa-solid fa-user-check"></i> Eligibility:</span>
+                  <span class="info-val">10+2 with Math/CS (Min 50%)</span>
+                </div>
+                <div class="info-row">
+                  <span class="info-label"><i class="fa-solid fa-indian-rupee-sign"></i> Annual Fee:</span>
+                  <span class="info-val price-highlight">₹85,000 / year</span>
+                </div>
+                <div class="info-row">
+                  <span class="info-label"><i class="fa-solid fa-briefcase"></i> Top Recruiters:</span>
+                  <span class="info-val">TCS, Wipro, Infosys, Cognizant</span>
+                </div>
+              </div>
+
+              <div class="course-card-actions">
+                <button class="btn btn-outline btn-sm learn-more-btn" data-course="bca">
+                  <i class="fa-solid fa-circle-info"></i> Learn More
+                </button>
+                <button class="btn btn-gradient btn-sm course-ask-btn" data-query="What is BCA eligibility, fee structure and syllabus?">
+                  <i class="fa-solid fa-robot"></i> Ask AI
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Course 4: MBA -->
+          <div class="course-card glass-panel" data-category="mgmt">
+            <div class="course-card-top bg-grad-orange">
+              <div class="course-badge">PG &bull; Management</div>
+              <div class="course-icon"><i class="fa-solid fa-chart-pie"></i></div>
+              <h3 class="course-name">MBA</h3>
+              <p class="course-spec">Master of Business Administration (Dual Specialization)</p>
+            </div>
+            <div class="course-card-body">
+              <p class="course-desc">Premier leadership program with dual specializations in Marketing, Finance, HR, Business Analytics, and Supply Chain with guaranteed corporate internships.</p>
+              
+              <div class="course-info-list">
+                <div class="info-row">
+                  <span class="info-label"><i class="fa-regular fa-clock"></i> Duration:</span>
+                  <span class="info-val">2 Years (4 Semesters)</span>
+                </div>
+                <div class="info-row">
+                  <span class="info-label"><i class="fa-solid fa-user-check"></i> Eligibility:</span>
+                  <span class="info-val">Graduation (Min 50%) + Entrance</span>
+                </div>
+                <div class="info-row">
+                  <span class="info-label"><i class="fa-solid fa-indian-rupee-sign"></i> Annual Fee:</span>
+                  <span class="info-val price-highlight">₹2,10,000 / year</span>
+                </div>
+                <div class="info-row">
+                  <span class="info-label"><i class="fa-solid fa-briefcase"></i> Top Recruiters:</span>
+                  <span class="info-val">McKinsey, Morgan Stanley, PwC</span>
+                </div>
+              </div>
+
+              <div class="course-card-actions">
+                <button class="btn btn-outline btn-sm learn-more-btn" data-course="mba">
+                  <i class="fa-solid fa-circle-info"></i> Learn More
+                </button>
+                <button class="btn btn-gradient btn-sm course-ask-btn" data-query="Tell me about MBA admission process, fee and specializations">
+                  <i class="fa-solid fa-robot"></i> Ask AI
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Course 5: MCA -->
+          <div class="course-card glass-panel" data-category="comp">
+            <div class="course-card-top bg-grad-cyan">
+              <div class="course-badge">PG &bull; Technology</div>
+              <div class="course-icon"><i class="fa-solid fa-network-wired"></i></div>
+              <h3 class="course-name">MCA</h3>
+              <p class="course-spec">Master of Computer Applications (Cloud Native & DevOps)</p>
+            </div>
+            <div class="course-card-body">
+              <p class="course-desc">Advanced postgraduate software engineering program covering cloud computing, distributed systems, cybersecurity, containerization, and enterprise backend systems.</p>
+              
+              <div class="course-info-list">
+                <div class="info-row">
+                  <span class="info-label"><i class="fa-regular fa-clock"></i> Duration:</span>
+                  <span class="info-val">2 Years (4 Semesters)</span>
+                </div>
+                <div class="info-row">
+                  <span class="info-label"><i class="fa-solid fa-user-check"></i> Eligibility:</span>
+                  <span class="info-val">BCA/B.Sc CS (Min 50%)</span>
+                </div>
+                <div class="info-row">
+                  <span class="info-label"><i class="fa-solid fa-indian-rupee-sign"></i> Annual Fee:</span>
+                  <span class="info-val price-highlight">₹1,20,000 / year</span>
+                </div>
+                <div class="info-row">
+                  <span class="info-label"><i class="fa-solid fa-briefcase"></i> Top Recruiters:</span>
+                  <span class="info-val">Oracle, SAP, IBM, Cisco</span>
+                </div>
+              </div>
+
+              <div class="course-card-actions">
+                <button class="btn btn-outline btn-sm learn-more-btn" data-course="mca">
+                  <i class="fa-solid fa-circle-info"></i> Learn More
+                </button>
+                <button class="btn btn-gradient btn-sm course-ask-btn" data-query="What is MCA eligibility, fee structure and placements?">
+                  <i class="fa-solid fa-robot"></i> Ask AI
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Course 6: B.Com -->
+          <div class="course-card glass-panel" data-category="mgmt">
+            <div class="course-card-top bg-grad-emerald">
+              <div class="course-badge">UG &bull; Commerce</div>
+              <div class="course-icon"><i class="fa-solid fa-coins"></i></div>
+              <h3 class="course-name">B.Com (Hons.)</h3>
+              <p class="course-spec">Accounting, Taxation & Investment Banking</p>
+            </div>
+            <div class="course-card-body">
+              <p class="course-desc">Comprehensive commercial studies integrating global ACCA/CA preparation, corporate taxation, equity research, auditing, and corporate finance.</p>
+              
+              <div class="course-info-list">
+                <div class="info-row">
+                  <span class="info-label"><i class="fa-regular fa-clock"></i> Duration:</span>
+                  <span class="info-val">3 Years (6 Semesters)</span>
+                </div>
+                <div class="info-row">
+                  <span class="info-label"><i class="fa-solid fa-user-check"></i> Eligibility:</span>
+                  <span class="info-val">10+2 Commerce/Science (Min 50%)</span>
+                </div>
+                <div class="info-row">
+                  <span class="info-label"><i class="fa-solid fa-indian-rupee-sign"></i> Annual Fee:</span>
+                  <span class="info-val price-highlight">₹75,000 / year</span>
+                </div>
+                <div class="info-row">
+                  <span class="info-label"><i class="fa-solid fa-briefcase"></i> Top Recruiters:</span>
+                  <span class="info-val">KPMG, Axis Bank, Genpact, ICICI</span>
+                </div>
+              </div>
+
+              <div class="course-card-actions">
+                <button class="btn btn-outline btn-sm learn-more-btn" data-course="bcom">
+                  <i class="fa-solid fa-circle-info"></i> Learn More
+                </button>
+                <button class="btn btn-gradient btn-sm course-ask-btn" data-query="Tell me about B.Com Honours fee, eligibility and curriculum">
+                  <i class="fa-solid fa-robot"></i> Ask AI
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. ADMISSION PROCESS SECTION -->
+    <section class="section admissions-section" id="admissions">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-route"></i> Roadmap</span>
+          <h2 class="section-title">Step-by-Step <span class="gradient-text">Admission Process</span></h2>
+          <p class="section-subtitle">
+            Joining CampusConnect University is simple and completely streamlined online in five straightforward stages.
+          </p>
+        </div>
+
+        <!-- 5 Steps Stepper Timeline -->
+        <div class="stepper-pipeline">
+          <div class="step-card glass-panel" data-step="1">
+            <div class="step-number-badge">1</div>
+            <div class="step-icon-circle bg-grad-purple">
+              <i class="fa-solid fa-user-plus"></i>
+            </div>
+            <h3 class="step-title">Register Online</h3>
+            <p class="step-desc">Create your student applicant portal account with basic email and phone details to generate your unique Application ID.</p>
+            <div class="step-tag">Step 1 &bull; 5 Minutes</div>
+          </div>
+
+          <div class="step-connector">
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+
+          <div class="step-card glass-panel" data-step="2">
+            <div class="step-number-badge">2</div>
+            <div class="step-icon-circle bg-grad-blue">
+              <i class="fa-solid fa-file-lines"></i>
+            </div>
+            <h3 class="step-title">Fill Application Form</h3>
+            <p class="step-desc">Select your desired program, input high school / degree scores, and share your personal & extra-curricular achievements.</p>
+            <div class="step-tag">Step 2 &bull; Online</div>
+          </div>
+
+          <div class="step-connector">
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+
+          <div class="step-card glass-panel" data-step="3">
+            <div class="step-number-badge">3</div>
+            <div class="step-icon-circle bg-grad-pink">
+              <i class="fa-solid fa-cloud-arrow-up"></i>
+            </div>
+            <h3 class="step-title">Upload Documents</h3>
+            <p class="step-desc">Upload scanned copies of 10th/12th marksheets, government photo ID, passport photos, and category certificates.</p>
+            <div class="step-tag">Step 3 &bull; Digital Docs</div>
+          </div>
+
+          <div class="step-connector">
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+
+          <div class="step-card glass-panel" data-step="4">
+            <div class="step-number-badge">4</div>
+            <div class="step-icon-circle bg-grad-orange">
+              <i class="fa-solid fa-credit-card"></i>
+            </div>
+            <h3 class="step-title">Complete Fee Payment</h3>
+            <p class="step-desc">Pay the nominal application / seat reservation fee securely through UPI, Net Banking, Credit/Debit cards or EMI.</p>
+            <div class="step-tag">Step 4 &bull; Secure Gateway</div>
+          </div>
+
+          <div class="step-connector">
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+
+          <div class="step-card glass-panel" data-step="5">
+            <div class="step-number-badge">5</div>
+            <div class="step-icon-circle bg-grad-emerald">
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3 class="step-title">Confirm Admission</h3>
+            <p class="step-desc">Receive your official Provisional Admission Letter, student roll number, and welcome orientation schedule kit!</p>
+            <div class="step-tag">Step 5 &bull; Congratulations</div>
+          </div>
+        </div>
+
+        <!-- Admission Actions & Checklist Modal Trigger -->
+        <div class="admission-cta-box glass-panel text-center">
+          <div class="cta-inner">
+            <div class="cta-icon">
+              <i class="fa-solid fa-folder-open text-purple"></i>
+            </div>
+            <div class="cta-text">
+              <h4>Need the Document Checklist or Have Admission Questions?</h4>
+              <p>Check the exact list of attested certificates required or ask our AI counsellor for fast answers.</p>
+            </div>
+            <div class="cta-btns">
+              <button class="btn btn-outline" id="docs-checklist-btn">
+                <i class="fa-solid fa-list-check"></i> View Document Checklist
+              </button>
+              <a href="#enquiry" class="btn btn-gradient">
+                <i class="fa-solid fa-paper-plane"></i> Apply / Submit Enquiry
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. QUICK ENQUIRY SECTION -->
+    <section class="section enquiry-section" id="enquiry">
+      <div class="container">
+        <div class="enquiry-card glass-panel">
+          <div class="enquiry-grid">
+            <div class="enquiry-info-pane">
+              <span class="section-tag"><i class="fa-solid fa-headset"></i> Get In Touch</span>
+              <h2 class="enquiry-title">Quick Student <br><span class="gradient-text">Enquiry Portal</span></h2>
+              <p class="enquiry-desc">
+                Have specific queries about course eligibility, fee concessions, or hostel availability? Submit your details and our admission team will assist you within 24 hours.
+              </p>
+
+              <div class="enquiry-perks">
+                <div class="perk-item">
+                  <div class="perk-icon bg-grad-purple"><i class="fa-solid fa-bolt"></i></div>
+                  <div>
+                    <strong>Instant Confirmation:</strong>
+                    <span>Enquiries are securely saved and logged in demo local storage.</span>
+                  </div>
+                </div>
+                <div class="perk-item">
+                  <div class="perk-icon bg-grad-pink"><i class="fa-solid fa-phone-volume"></i></div>
+                  <div>
+                    <strong>1-on-1 Academic Mentorship:</strong>
+                    <span>Personalized course recommendation matching your marks.</span>
+                  </div>
+                </div>
+                <div class="perk-item">
+                  <div class="perk-icon bg-grad-orange"><i class="fa-solid fa-gift"></i></div>
+                  <div>
+                    <strong>Free Information Brochure:</strong>
+                    <span>Downloadable comprehensive curriculum prospectus.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="enquiry-demo-box">
+                <i class="fa-solid fa-database text-blue"></i>
+                <p><strong>Demo Mode Active:</strong> Submissions are stored locally in your browser and will update the live dashboard counter.</p>
+              </div>
+            </div>
+
+            <!-- Enquiry Form -->
+            <div class="enquiry-form-pane">
+              <form id="enquiry-form" class="styled-form" novalidate>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="student-name"><i class="fa-solid fa-user"></i> Full Name <span class="required">*</span></label>
+                    <input type="text" id="student-name" name="name" placeholder="e.g. Rahul Sharma" required autocomplete="name">
+                    <span class="error-msg" id="name-error">Please enter your name.</span>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="student-email"><i class="fa-solid fa-envelope"></i> Email Address <span class="required">*</span></label>
+                    <input type="email" id="student-email" name="email" placeholder="rahul@example.com" required autocomplete="email">
+                    <span class="error-msg" id="email-error">Please enter a valid email.</span>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="student-phone"><i class="fa-solid fa-phone"></i> Phone Number <span class="required">*</span></label>
+                    <input type="tel" id="student-phone" name="phone" placeholder="e.g. 9876543210" required autocomplete="tel">
+                    <span class="error-msg" id="phone-error">Please enter a 10-digit mobile number.</span>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="student-course"><i class="fa-solid fa-graduation-cap"></i> Course Interested In <span class="required">*</span></label>
+                    <select id="student-course" name="course" required>
+                      <option value="" disabled selected>Select a Program</option>
+                      <option value="B.Tech (CSE / AI & ML)">B.Tech - Computer Science / AI & ML</option>
+                      <option value="BBA (Digital Marketing & FinTech)">BBA - Digital Marketing & FinTech</option>
+                      <option value="BCA (Full-Stack & Cloud)">BCA - Full-Stack & Cloud Computing</option>
+                      <option value="MBA (Dual Specialization)">MBA - Dual Specialization</option>
+                      <option value="MCA (Cloud Native & DevOps)">MCA - Cloud Native & DevOps</option>
+                      <option value="B.Com (Honours - Finance)">B.Com - Honours (Finance & Taxation)</option>
+                    </select>
+                    <span class="error-msg" id="course-error">Please choose a course.</span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="student-question"><i class="fa-solid fa-comment-dots"></i> Your Question / Enquiry <span class="required">*</span></label>
+                  <textarea id="student-question" name="question" rows="4" placeholder="Ask about fee waivers, hostel room availability, placement statistics..." required></textarea>
+                  <span class="error-msg" id="question-error">Please enter your question.</span>
+                </div>
+
+                <div class="form-checkbox-group">
+                  <input type="checkbox" id="terms-agree" required checked>
+                  <label for="terms-agree">I agree to receive admission updates and acknowledge this is a demo simulation.</label>
+                </div>
+
+                <button type="submit" class="btn btn-gradient btn-lg w-100" id="enquiry-submit-btn">
+                  <span class="btn-text">Submit Enquiry Now</span>
+                  <i class="fa-solid fa-paper-plane"></i>
+                </button>
+              </form>
+
+              <!-- Success Alert Message (Shown after submit) -->
+              <div class="form-success-alert glass-panel" id="enquiry-success" style="display: none;">
+                <div class="success-icon-circle bg-grad-emerald">
+                  <i class="fa-solid fa-check"></i>
+                </div>
+                <h4>Enquiry Submitted Successfully!</h4>
+                <p>Thank you, <strong id="success-student-name">Student</strong>. Your enquiry for <span id="success-student-course" class="gradient-text">Course</span> has been registered and saved in local storage.</p>
+                <div class="success-actions">
+                  <button class="btn btn-sm btn-outline" id="submit-another-btn">Submit Another Enquiry</button>
+                  <button class="btn btn-sm btn-gradient" id="ask-ai-from-enquiry">Ask AI About This Course</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="section faq-section" id="faqs">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-circle-question"></i> Help Desk</span>
+          <h2 class="section-title">Frequently Asked <span class="gradient-text">Questions</span></h2>
+          <p class="section-subtitle">
+            Find prompt answers to the most common queries asked by prospective students and parents.
+          </p>
+        </div>
+
+        <div class="faq-container">
+          <!-- FAQ Search & Filter -->
+          <div class="faq-search-wrapper">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="faq-search-input" placeholder="Search FAQs (e.g., fee payment, hostel curfew, cutoffs)...">
+          </div>
+
+          <div class="accordion" id="faq-accordion">
+            
+            <div class="accordion-item glass-panel">
+              <button class="accordion-header" aria-expanded="false">
+                <span class="accordion-title"><i class="fa-solid fa-question-circle text-purple"></i> What are the eligibility criteria for B.Tech CSE?</span>
+                <i class="fa-solid fa-chevron-down accordion-icon"></i>
+              </button>
+              <div class="accordion-content">
+                <div class="accordion-body">
+                  <p>For B.Tech in Computer Science & Engineering, applicants must have completed 10+2 (or equivalent) with Physics, Mathematics, and Chemistry/Computer Science with an aggregate of at least <strong>60% marks</strong>. Valid scores in JEE Main or our University Entrance Exam (CC-SAT) provide preferential seat allotment and merit scholarship eligibility.</p>
+                  <button class="faq-ask-ai" data-query="What is B.Tech CSE eligibility criteria and minimum marks?"><i class="fa-solid fa-robot"></i> Ask AI for more details</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item glass-panel">
+              <button class="accordion-header" aria-expanded="false">
+                <span class="accordion-title"><i class="fa-solid fa-question-circle text-pink"></i> Can college tuition fees be paid in installments?</span>
+                <i class="fa-solid fa-chevron-down accordion-icon"></i>
+              </button>
+              <div class="accordion-content">
+                <div class="accordion-body">
+                  <p><strong>Yes!</strong> CampusConnect provides two flexible payment options: semester-wise installments (2 equal payments per year) or zero-interest monthly EMI plans through our banking partners (SBI, HDFC, ICICI). Contact the accounts cell or ask our AI chatbot for the installment calendar.</p>
+                  <button class="faq-ask-ai" data-query="How can I pay tuition fees in installments?"><i class="fa-solid fa-robot"></i> Ask AI for fee options</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item glass-panel">
+              <button class="accordion-header" aria-expanded="false">
+                <span class="accordion-title"><i class="fa-solid fa-question-circle text-orange"></i> What scholarships are available and how do I apply?</span>
+                <i class="fa-solid fa-chevron-down accordion-icon"></i>
+              </button>
+              <div class="accordion-content">
+                <div class="accordion-body">
+                  <p>We provide four major scholarship tiers:
+                    <br>1. <strong>Merit Scholarship:</strong> 95%+ in 10+2 grants 100% tuition waiver; 90-95% grants 50% waiver; 80-90% grants 25% waiver.
+                    <br>2. <strong>Sports Quota:</strong> Up to 75% for state/national medalists.
+                    <br>3. <strong>Girl Child Empowerment:</strong> 25% concession for all female students in STEM.
+                    <br>4. <strong>Defense & Police Personnel Wards:</strong> 20% concession.
+                  </p>
+                  <button class="faq-ask-ai" data-query="Are scholarships available and what is the eligibility?"><i class="fa-solid fa-robot"></i> Ask AI about scholarships</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item glass-panel">
+              <button class="accordion-header" aria-expanded="false">
+                <span class="accordion-title"><i class="fa-solid fa-question-circle text-cyan"></i> Are hostel rooms air-conditioned and what is the curfew time?</span>
+                <i class="fa-solid fa-chevron-down accordion-icon"></i>
+              </button>
+              <div class="accordion-content">
+                <div class="accordion-body">
+                  <p>Both AC and Non-AC rooms are available in 2-seater and 3-seater configurations. Every room comes with an attached washroom, study table, ergonomic chair, and high-speed Wi-Fi. The evening campus curfew is <strong>9:30 PM</strong> for safety, with biometric attendance monitoring.</p>
+                  <button class="faq-ask-ai" data-query="Is hostel accommodation available and what are hostel rules?"><i class="fa-solid fa-robot"></i> Ask AI about hostel rules</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item glass-panel">
+              <button class="accordion-header" aria-expanded="false">
+                <span class="accordion-title"><i class="fa-solid fa-question-circle text-emerald"></i> What is the highest and average salary package offered?</span>
+                <i class="fa-solid fa-chevron-down accordion-icon"></i>
+              </button>
+              <div class="accordion-content">
+                <div class="accordion-body">
+                  <p>In the latest placement season, the <strong>highest international package reached ₹45.5 LPA</strong>, while the highest domestic package stood at <strong>₹32 LPA</strong>. The overall campus average package across technical programs was <strong>₹8.4 LPA</strong>, and <strong>₹7.6 LPA</strong> for MBA graduates.</p>
+                  <button class="faq-ask-ai" data-query="What is the placement record and highest salary package?"><i class="fa-solid fa-robot"></i> Ask AI about placements</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item glass-panel">
+              <button class="accordion-header" aria-expanded="false">
+                <span class="accordion-title"><i class="fa-solid fa-question-circle text-purple"></i> What documents do I need to bring for physical verification?</span>
+                <i class="fa-solid fa-chevron-down accordion-icon"></i>
+              </button>
+              <div class="accordion-content">
+                <div class="accordion-body">
+                  <p>You need original and 2 sets of self-attested photocopies of: 10th & 12th Marksheets, Transfer Certificate (TC), Migration Certificate, Category/Caste Certificate (if applicable), Aadhaar Card / ID Proof, and 6 passport-size photographs.</p>
+                  <button class="faq-ask-ai" data-query="What documents are required for admission?"><i class="fa-solid fa-robot"></i> Ask AI for checklist</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. CONTACT SECTION -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-location-dot"></i> Reach Us</span>
+          <h2 class="section-title">Get in Touch with <span class="gradient-text">Admissions</span></h2>
+          <p class="section-subtitle">
+            Visit our scenic campus, call our helpline, or send an inquiry directly to the admissions directorate.
+          </p>
+          <div class="demo-disclaimer-pill">
+            <i class="fa-solid fa-circle-info"></i> Demo Contact Information for University Presentation
+          </div>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Contact Information Cards -->
+          <div class="contact-cards-column">
+            <div class="contact-info-card glass-panel">
+              <div class="contact-icon bg-grad-purple">
+                <i class="fa-solid fa-map-location-dot"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Campus Address</h4>
+                <p>CampusConnect University Campus, Knowledge City Express Highway, Sector 12, Bengaluru, Karnataka - 560100 (Demo)</p>
+                <span class="contact-note"><i class="fa-solid fa-bus"></i> Free Shuttle from Metro Station</span>
+              </div>
+            </div>
+
+            <div class="contact-info-card glass-panel">
+              <div class="contact-icon bg-grad-blue">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Admission Helpline</h4>
+                <p><strong>Toll Free:</strong> 1800-200-CAMPUS (226787)</p>
+                <p><strong>Direct Desk:</strong> +91 (080) 2345-6789 / 90</p>
+                <span class="contact-note"><i class="fa-solid fa-clock"></i> Mon to Sat: 9:00 AM – 6:00 PM</span>
+              </div>
+            </div>
+
+            <div class="contact-info-card glass-panel">
+              <div class="contact-icon bg-grad-pink">
+                <i class="fa-solid fa-envelope-open-text"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Official Email Addresses</h4>
+                <p><strong>Admissions:</strong> admissions@campusconnect.edu</p>
+                <p><strong>General Support:</strong> info@campusconnect.edu</p>
+                <span class="contact-note"><i class="fa-solid fa-reply"></i> Replies within 24 working hours</span>
+              </div>
+            </div>
+
+            <div class="contact-info-card glass-panel">
+              <div class="contact-icon bg-grad-orange">
+                <i class="fa-solid fa-clock"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Visiting Hours</h4>
+                <p><strong>Monday – Friday:</strong> 9:00 AM – 5:30 PM</p>
+                <p><strong>Saturday:</strong> 9:30 AM – 2:00 PM (Counselling Desk Open)</p>
+                <span class="contact-note"><i class="fa-solid fa-calendar-check"></i> Campus tours every Saturday at 11 AM</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form / Interactive Message Form -->
+          <div class="contact-form-column glass-panel">
+            <h3 class="form-pane-title"><i class="fa-solid fa-paper-plane text-purple"></i> Send Direct Message</h3>
+            <p class="form-pane-sub">Fill out the quick query form below and receive an instant simulated response.</p>
+            
+            <form id="contact-direct-form" class="styled-form">
+              <div class="form-group">
+                <label for="contact-name">Your Full Name <span class="required">*</span></label>
+                <input type="text" id="contact-name" placeholder="John Doe" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-email">Email Address <span class="required">*</span></label>
+                <input type="email" id="contact-email" placeholder="john@example.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-subject">Subject</label>
+                <input type="text" id="contact-subject" placeholder="e.g. Admission for International Student / Fee Concession" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-msg">Message</label>
+                <textarea id="contact-msg" rows="4" placeholder="Write your message here..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-gradient btn-lg w-100">
+                <span>Send Message</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </form>
+
+            <div id="contact-feedback" class="alert-box" style="display: none;"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 9. FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-top-grid">
+        <!-- Col 1: Brand & About -->
+        <div class="footer-col footer-brand">
+          <div class="logo">
+            <div class="logo-icon-wrapper">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div class="logo-text">
+              <span class="brand-title">CampusConnect<span class="gradient-text">.AI</span></span>
+              <span class="brand-sub">Smart College Assistant</span>
+            </div>
+          </div>
+          <p class="footer-bio">
+            An advanced AI-powered college enquiry system built with intelligent natural language processing to assist prospective students, parents, and scholars 24/7.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-link" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="social-link" title="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="#" class="social-link" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" class="social-link" title="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" class="social-link" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Quick Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#home"><i class="fa-solid fa-angle-right"></i> Home</a></li>
+            <li><a href="#about"><i class="fa-solid fa-angle-right"></i> About University</a></li>
+            <li><a href="#courses"><i class="fa-solid fa-angle-right"></i> Academic Courses</a></li>
+            <li><a href="#admissions"><i class="fa-solid fa-angle-right"></i> Admission Steps</a></li>
+            <li><a href="#dashboard"><i class="fa-solid fa-angle-right"></i> Statistics & Trends</a></li>
+            <li><a href="#chat-section"><i class="fa-solid fa-angle-right"></i> Interactive AI Chat</a></li>
+            <li><a href="#faqs"><i class="fa-solid fa-angle-right"></i> FAQ Help Center</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Programs -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Programs Offered</h4>
+          <ul class="footer-links">
+            <li><a href="#courses"><i class="fa-solid fa-laptop-code"></i> B.Tech (Computer Science)</a></li>
+            <li><a href="#courses"><i class="fa-solid fa-chart-line"></i> BBA (Digital & FinTech)</a></li>
+            <li><a href="#courses"><i class="fa-solid fa-code"></i> BCA (Full Stack & Cloud)</a></li>
+            <li><a href="#courses"><i class="fa-solid fa-briefcase"></i> MBA (Dual Specialization)</a></li>
+            <li><a href="#courses"><i class="fa-solid fa-server"></i> MCA (DevOps & Cloud)</a></li>
+            <li><a href="#courses"><i class="fa-solid fa-coins"></i> B.Com (Honours)</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Newsletter & Brochure -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Admission Newsletter</h4>
+          <p class="footer-sub-text">Subscribe for notifications regarding cutoff lists, entrance tests, and scholarship deadlines.</p>
+          <form id="newsletter-form" class="newsletter-form">
+            <div class="newsletter-input-group">
+              <input type="email" id="newsletter-email" placeholder="Enter student email" required>
+              <button type="submit" class="btn btn-gradient btn-icon" title="Subscribe"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+            <span id="newsletter-msg" class="newsletter-status"></span>
+          </form>
+          <div class="brochure-download-box">
+            <button class="btn btn-outline btn-sm w-100" id="download-brochure-btn">
+              <i class="fa-solid fa-file-pdf text-pink"></i> Download Demo Prospectus
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Copyright & Project Disclaimer -->
+      <div class="footer-bottom">
+        <div class="demo-watermark">
+          <p><i class="fa-solid fa-flask"></i> <strong>University Project Demo:</strong> Designed & Developed for Academic Showcase. All institutional information, fees, and stats are sample representations.</p>
+        </div>
+        <div class="footer-copyright">
+          <p>&copy; 2026 CampusConnect AI. All rights reserved. Crafted with passion, modern HTML5, CSS3 & JavaScript.</p>
+          <div class="footer-policy-links">
+            <a href="#about">Privacy Simulation</a> &bull;
+            <a href="#about">Terms of Use</a> &bull;
+            <a href="#dashboard">Admin Portal</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WIDGETS & MODALS -->
+
+  <!-- Floating Chatbot Launcher Button -->
+  <div class="floating-chat-container" id="floating-chat-launcher">
+    <button class="floating-chat-btn" id="floating-btn" aria-label="Open AI College Chatbot" title="Chat with CampusConnect AI">
+      <div class="floating-bot-icon">
+        <i class="fa-solid fa-robot"></i>
+      </div>
+      <span class="floating-badge pulse">AI Online</span>
+    </button>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top-btn" id="back-to-top" title="Scroll to Top" aria-label="Scroll to Top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- MODAL: Course Details Modal (Dynamically Populated) -->
+  <div class="modal-overlay" id="course-modal" aria-hidden="true">
+    <div class="modal-container glass-panel">
+      <button class="modal-close-btn" id="course-modal-close" aria-label="Close Course Modal"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-header" id="course-modal-header">
+        <!-- Injected via JS -->
+      </div>
+      <div class="modal-body" id="course-modal-body">
+        <!-- Injected via JS -->
+      </div>
+      <div class="modal-footer" id="course-modal-footer">
+        <!-- Injected via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: College Information Details Modal (For 8 info cards) -->
+  <div class="modal-overlay" id="info-modal" aria-hidden="true">
+    <div class="modal-container glass-panel">
+      <button class="modal-close-btn" id="info-modal-close" aria-label="Close Modal"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-header" id="info-modal-header"></div>
+      <div class="modal-body" id="info-modal-body"></div>
+      <div class="modal-footer" id="info-modal-footer">
+        <button class="btn btn-outline" id="info-modal-dismiss">Close</button>
+        <button class="btn btn-gradient" id="info-modal-ask-btn"><i class="fa-solid fa-robot"></i> Ask AI More About This</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Document Checklist Modal -->
+  <div class="modal-overlay" id="docs-modal" aria-hidden="true">
+    <div class="modal-container glass-panel">
+      <button class="modal-close-btn" id="docs-modal-close" aria-label="Close Checklist"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-header bg-grad-purple">
+        <div class="modal-icon"><i class="fa-solid fa-folder-open"></i></div>
+        <div>
+          <h3>Mandatory Documents Checklist</h3>
+          <p>Official verification list for Academic Admissions 2026-27</p>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="checklist-items">
+          <label class="check-item"><input type="checkbox" checked disabled> <span>10th Standard Marksheet & Passing Certificate (Age Verification)</span></label>
+          <label class="check-item"><input type="checkbox" checked disabled> <span>12th Standard Marksheet (Minimum eligibility verification)</span></label>
+          <label class="check-item"><input type="checkbox" checked disabled> <span>Transfer Certificate (TC) & School Migration Certificate</span></label>
+          <label class="check-item"><input type="checkbox" checked disabled> <span>Government Issued Photo ID (Aadhaar Card / Passport / Voter ID)</span></label>
+          <label class="check-item"><input type="checkbox" checked disabled> <span>Entrance Scorecard (JEE / CAT / MAT / CC-SAT) if applicable</span></label>
+          <label class="check-item"><input type="checkbox" checked disabled> <span>Recent Passport Size Colour Photographs (6 Copies)</span></label>
+          <label class="check-item"><input type="checkbox" checked disabled> <span>Category / Caste / Income Certificate (For scholarship applicants)</span></label>
+          <label class="check-item"><input type="checkbox" checked disabled> <span>Conduct / Character Certificate from previous institution</span></label>
+        </div>
+        <div class="checklist-note">
+          <i class="fa-solid fa-circle-exclamation text-orange"></i>
+          <span>All original certificates must be presented during campus verification. Two sets of self-attested photocopies are retained by the registry.</span>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" id="print-checklist-btn"><i class="fa-solid fa-print"></i> Print Checklist</button>
+        <button class="btn btn-gradient" id="docs-ask-ai-btn"><i class="fa-solid fa-robot"></i> Ask AI Questions</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Admin Enquiries Management Drawer -->
+  <div class="modal-overlay" id="enquiries-drawer" aria-hidden="true">
+    <div class="modal-container glass-panel modal-lg">
+      <button class="modal-close-btn" id="enquiries-drawer-close" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-header bg-grad-pink">
+        <div class="modal-icon"><i class="fa-solid fa-database"></i></div>
+        <div>
+          <h3>Saved Demo Student Enquiries</h3>
+          <p>Logged in browser LocalStorage &bull; Ideal for University Presentation</p>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="drawer-stats-bar">
+          <span>Total Saved: <strong id="drawer-total-count">0</strong></span>
+          <div class="drawer-actions">
+            <button class="btn btn-sm btn-outline" id="export-enquiries-btn"><i class="fa-solid fa-file-csv"></i> Export CSV</button>
+            <button class="btn btn-sm btn-danger" id="clear-enquiries-btn"><i class="fa-solid fa-trash-can"></i> Clear All</button>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table class="styled-table" id="enquiries-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Student Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Course</th>
+                <th>Enquiry / Question</th>
+                <th>Date & Time</th>
+              </tr>
+            </thead>
+            <tbody id="enquiries-table-body">
+              <!-- Populated by JS -->
+            </tbody>
+          </table>
+        </div>
+        <div id="enquiries-empty-state" class="empty-state-box" style="display: none;">
+          <i class="fa-solid fa-inbox text-purple"></i>
+          <h4>No Enquiries Submitted Yet</h4>
+          <p>Fill out the Quick Enquiry form on the homepage to see live entries populated here!</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-gradient" id="drawer-close-bottom">Done Viewing</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Global Search Modal -->
+  <div class="modal-overlay" id="search-modal" aria-hidden="true">
+    <div class="modal-container glass-panel modal-search">
+      <div class="search-modal-header">
+        <i class="fa-solid fa-magnifying-glass search-modal-icon"></i>
+        <input type="text" id="global-search-input" placeholder="Search courses, fees, hostels, cutoffs, placements..." autocomplete="off">
+        <button class="modal-close-btn inline-close" id="search-modal-close"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="search-results-list" id="search-results-list">
+        <div class="search-hint">Type keyword to search courses, facilities, scholarships, and FAQs...</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Main Application Script -->
+  <script src="script.js"></script>
+</body>
+</html>
